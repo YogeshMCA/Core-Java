@@ -1,0 +1,13 @@
+
+public class ArrayCons {
+
+	public static void main(String[] args) {
+		
+		String arr[];
+		arr[0]="Hai"; // Error - Array should be initialized
+		String array[] = {"StringOne","StringTwo"};
+		array[2] = "StringThree";
+		System.out.println(array[2]);
+	}
+
+}

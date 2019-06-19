@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class ListCollection {
+public static void main(String ar[]){
+	String st1 = "Name1";
+	String st2 = "Name2";
+	
+	Collection<String> str = new ArrayList<>();
+	str.add(st1);
+	str.add(st2);
+	
+}
+}

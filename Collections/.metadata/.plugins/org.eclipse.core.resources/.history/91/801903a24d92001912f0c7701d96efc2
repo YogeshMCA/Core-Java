@@ -1,0 +1,10 @@
+
+public class ArrayCons {
+
+	public static void main(String[] args) {
+		String array[] = {"StringOne","StringTwo"};
+		array[2] = "StringThree";
+		System.out.println(array[2]);
+	}
+
+}
