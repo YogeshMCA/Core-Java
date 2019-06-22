@@ -1,0 +1,25 @@
+package com.example.Generics;
+
+/*
+ * Generics - Ensure Type safety to avoid runtime error...
+ * Consider this is a Jar file and this class only perform String Operation. This jar file is given to client -WhyGeneric.java
+ * 
+ */
+
+public class Collections {
+	T[] obj;
+	private static int i=0;
+	Collections(int size){
+		obj = new Object[size];
+	}
+	
+	public void add(Object obj){
+		this.obj[i++] = obj;
+	}
+	public void display(){
+		StringBuffer strBuf = new StringBuffer();
+		for(Object ob : this.obj)
+			strBuf.append((String)ob);
+			System.out.println(strBuf);
+	}
+}

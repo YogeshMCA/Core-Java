@@ -1,0 +1,28 @@
+package com.example.Generics;
+/*
+ * We have to ensure that the Collections class in the jar file only accept String.
+ */
+public class WhyGenerics {
+	
+	public static void main(String arg[]){
+		/*
+		 * Object[] Array will accept all types, but trying to use any function(like length() in String),
+		   will get runtime error for Integer. 
+		 * If without adding generic <T>(Collections<T>) - will work without any error, but trying to use any function(like length() in String),
+		  will get error in Integer value(12)
+		*/  
+		Collections collections = new Collections(5);
+		collections.add("A");
+		collections.add("B");
+		collections.add(12); 
+		display(collections);
+		//Ends
+		
+		//With Generic - java.lang.ClassCastException
+				
+	}
+	public static <T> void display(Collections collections){
+		System.out.println(collections.getValues(2));
+	}
+
+}

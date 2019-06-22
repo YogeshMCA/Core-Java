@@ -1,0 +1,20 @@
+package com.example.Generics;
+/*
+ * We have to ensure that the Collections class in the jar file only accept String.
+ */
+public class WhyGenerics {
+	
+	public static void main(String arg[]){
+		Collections collections = new Collections(5);
+		collections.add("A");
+		collections.add("B");
+		//collections.add(12); //Without Generic - java.lang.ClassCastException
+		display(collections);
+			
+				
+	}
+	public static <T> void display(Collections<T> collections){
+		System.out.println(collections.getValues());
+	}
+
+}

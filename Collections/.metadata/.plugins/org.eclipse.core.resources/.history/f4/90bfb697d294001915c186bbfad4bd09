@@ -1,0 +1,25 @@
+package com.example.Generics;
+
+import java.lang.reflect.Array;
+
+/*
+ * Generics - Ensure Type safety to avoid runtime error...
+ * Consider this is a Jar file and this class store array of same type. This jar file is given to client -WhyGeneric.java
+ * 
+ */
+
+public class Collections<E> {
+	Object[] obj;
+	private static int i=0;
+	
+	Collections(int size){
+		obj = new Object[size];
+	}
+	
+	public void add(E obj){
+		this.obj[i++] = obj;
+	}
+	public E[] getValues(){
+		return (E[]) this.obj;
+	}
+}

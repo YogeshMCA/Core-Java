@@ -1,0 +1,37 @@
+package com.example.Generics;
+/*
+ * We have to ensure that the Collections class in the jar file only accept String.
+ */
+public class WhyGenerics {
+	
+	public static void main(String arg[]){
+		Collections<String> collections = new Collections<String>(5);
+		collections.add("A");
+		collections.add("B");
+		//collections.add(12); //Without Generic - java.lang.ClassCastException
+		//display(collections);
+		
+		final int length = 5;
+
+		// create an Integer array of given length
+		Array<Integer> intArray = new Array(length);
+
+		intArray.set(0,10);
+
+		System.out.println(intArray);
+
+		// create a String array of given length
+		Array<String> strArray = new Array(length);
+
+		for (int i = 0; i < length; i++)
+			strArray.set(i, String.valueOf((char)(i + 65)));
+
+		System.out.println(strArray);
+		
+	}
+	public static void display(Collections<String> collections){
+		for(String str : collections.getValues())
+			System.out.println(str);
+	}
+
+}

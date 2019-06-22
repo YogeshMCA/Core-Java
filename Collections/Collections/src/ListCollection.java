@@ -20,5 +20,6 @@ public static void main(String ar[]){
 	
 	List<String> ss = new ArrayList<>();
 	ss.add(0, st1);
+	System.out.println(ss);
 }
 }
