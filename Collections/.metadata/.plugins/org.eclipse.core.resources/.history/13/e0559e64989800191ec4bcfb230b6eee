@@ -1,0 +1,34 @@
+package com.example.Generics;
+/*
+ * We have to ensure that the Collections class in the jar file only accept String.
+ */
+public class WhyGenerics {
+	
+	public static void main(String arg[]){
+		/*
+		 * Object[] Array will accept all types, but trying to use any function(like length() in String),
+		   will get runtime error for Integer.
+		   
+		   Adding generic type <T>, will give compile time error when adding Integer to String T type. This will ensure type safety and avoid Runtime error.
+		   Collections<String> collections = new Collections<String>(5);
+		*/  
+		Collections<String> collections = new Collections<String>(5);
+		collections.add("A");
+		//collections.add(12); 
+		display(collections);
+		
+		
+		// Wildcard Example
+		Partner partner1 = new Partner("YYY", "55");
+		Partner partner2 = new Partner("XXX", "44");
+		Person persons[] = new Person[2];
+		persons[0] = partner1;
+		persons[1] = partner2;
+		
+		displayAll(person)
+	}
+	public static <T> void display(Collections<T> collections){
+		System.out.println(collections.getValues(2));
+	}
+
+}
