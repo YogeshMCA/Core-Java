@@ -85,13 +85,6 @@ public class WhyGenerics {
 		//Generic - limitation in method overloading
 		overload(qo);
 		
-		//Raw type - Raw type can be assigned to generic type, to support native code
-		List rawType = new ArrayList();
-		rawType.add("RRR");
-		rawType.add("RRR-XXX");
-		rawType.add(1);
-		List<String> gene = new ArrayList<>();
-		gene=rawType;
 		
 		
 		

@@ -29,7 +29,7 @@ public class WhyGenerics {
 		 */
 		Integer[] integer = {10,20};
 		Number[] number = integer;
-		//number[0] = 32.0; //ArrayStoreException - It will accept only Integer value
+		//number[0] = 3.2; //ArrayStoreException
 		
 		Partner partner1 = new Partner("YYY", "55");
 		Partner partner2 = new Partner("XXX", "44");
@@ -77,23 +77,8 @@ public class WhyGenerics {
 		upperBound(num);
 		upperBound(dou);
 		
-		Intr inn = new Intr();
-		List<Intr> classInn = new ArrayList<>();
-		classInn.add(inn);
-		lowerBoundInt(classInn);
 		
-		//Generic - limitation in method overloading
-		overload(qo);
-		
-		//Raw type - Raw type can be assigned to generic type, to support native code
-		List rawType = new ArrayList();
-		rawType.add("RRR");
-		rawType.add("RRR-XXX");
-		rawType.add(1);
-		List<String> gene = new ArrayList<>();
-		gene=rawType;
-		
-		
+		lowerBoundInt();
 		
 	}
 	public static <T> void display(Collections<T> collections){
@@ -117,36 +102,19 @@ public class WhyGenerics {
 		System.out.println(obj);
 	}
 	
-	public static void lowerBoundInt(List<? super Intr> obj){
-		C c = (C) obj.get(0);
-		c.disp();
-		System.out.println(obj.get(0).getClass());
+	public static void lowerBoundInt(List<? super C> obj){
+		System.out.println(obj);
 	}
-	
-	//Erasure - Generics will be erased after the compilation List<String> to List. So Overloading is not possible with generics 
-	public static void overload(List<String> str){
-		for(String ss:str)
-			System.out.println(ss);
-	}
-	
-	/*public static void overload(List<Integer> str){
-		for(Integer ss:str)
-			System.out.println(ss);
-	}*/
 }
 
-
-interface C{
+interface A{
 	void disp();
 }
 
+interface B{
+	void disp1();
+}
 
-class Intr implements C{
-
-	@Override
-	public void disp() {
-		System.out.println("Class Intr======>");
-		
-	}
-	
+interface C extends B,A{
+	void disp();
 }

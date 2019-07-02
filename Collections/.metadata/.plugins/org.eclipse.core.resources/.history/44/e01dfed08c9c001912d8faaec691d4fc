@@ -90,6 +90,7 @@ public class WhyGenerics {
 		rawType.add("RRR");
 		rawType.add("RRR-XXX");
 		rawType.add(1);
+		
 		List<String> gene = new ArrayList<>();
 		gene=rawType;
 		

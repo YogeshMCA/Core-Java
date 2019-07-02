@@ -29,7 +29,7 @@ public class WhyGenerics {
 		 */
 		Integer[] integer = {10,20};
 		Number[] number = integer;
-		//number[0] = 32.0; //ArrayStoreException - It will accept only Integer value
+		number[0] = 32; //ArrayStoreException
 		
 		Partner partner1 = new Partner("YYY", "55");
 		Partner partner2 = new Partner("XXX", "44");
@@ -85,13 +85,6 @@ public class WhyGenerics {
 		//Generic - limitation in method overloading
 		overload(qo);
 		
-		//Raw type - Raw type can be assigned to generic type, to support native code
-		List rawType = new ArrayList();
-		rawType.add("RRR");
-		rawType.add("RRR-XXX");
-		rawType.add(1);
-		List<String> gene = new ArrayList<>();
-		gene=rawType;
 		
 		
 		
