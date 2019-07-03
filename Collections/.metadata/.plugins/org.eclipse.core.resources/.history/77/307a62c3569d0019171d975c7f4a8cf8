@@ -85,8 +85,6 @@ public class WhyGenerics {
 		List<AA> subType = new ArrayList<>();
 		subType.add(new AA());
 		lowerBoundWithClass(subType);
-		for(AA aa : subType)
-			System.out.println(aa);
 		
 		
 		//Generic - limitation in method overloading

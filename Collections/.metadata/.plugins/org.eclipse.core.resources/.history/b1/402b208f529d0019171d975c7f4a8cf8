@@ -84,9 +84,7 @@ public class WhyGenerics {
 		
 		List<AA> subType = new ArrayList<>();
 		subType.add(new AA());
-		lowerBoundWithClass(subType);
-		for(AA aa : subType)
-			System.out.println(aa);
+		lowerBoundClass(subType);
 		
 		
 		//Generic - limitation in method overloading
@@ -100,14 +98,6 @@ public class WhyGenerics {
 		List<String> gene = new ArrayList<>();
 		gene=rawType;
 		
-
-		//Inheritance - Overriding is applicable for methods(Subclass method will be called), not for member variables(Super class variable will be used) 
-		AA aa = new AA();
-		BB bb = new BB();
-		CC cc = new CC();
-		aa = bb;
-		System.out.println(aa.shr);
-		aa.disp();
 		
 		
 	}
@@ -130,15 +120,12 @@ public class WhyGenerics {
 		System.out.println(obj);
 	}
 	
-	// This method will accept List of parent types of BB(AA) and BB itself.
-	public static void lowerBoundWithClass(List<? super BB> obj){
-		//Obj - Can add all BB sub type
-		obj.add(new BB());
-		obj.add(new CC());
+	public static void lowerBoundClass(List<? super BB> obj){
+		//obj.add(new CC());
 		//obj.add(new AA());
-		//AA aa = (AA)obj.get(0);
-		//System.out.println(aa.a);
-		//System.out.println(obj.get(0).getClass());
+		AA aa = (AA)obj.get(0);
+		System.out.println(aa.a);
+		System.out.println(obj.get(0));
 	}
 	
 	public static void upperBound(List<? extends Number> obj){
@@ -178,25 +165,13 @@ class Intr implements C{
 	}
 }
 class AA{
-	String a="AAAA";
-	String shr = "SSSSSSSAAAAAA";
-	void disp(){
-		System.out.println("AA Prints");
-	}
+	int a;
 }
 class BB extends AA{
-	String b="BBBB";
-	String shr = "SSSSSSSBBBBBB";
-	void disp(){
-		System.out.println("BB Prints");
-	}
+	int b;
 }
 
 class CC extends BB{
-	String c="CCCC";
-	String shr = "SSSSSSSCCCCCC";
-	void disp(){
-		System.out.println("CC Prints");
-	}
+	int c;
 }
 	
