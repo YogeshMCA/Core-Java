@@ -1,0 +1,32 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetCollection {
+
+	public static void main(String arg[]) {
+		
+		//Mutable - Able to modify the object..
+		StringBuilder name= new StringBuilder("AAAA");
+		StringBuilder name1= new StringBuilder("AAAA");
+		System.out.println("Name:"+name+" "+System.identityHashCode(name));
+		//name.append("XXX");
+		System.out.println("Name:"+name1+" "+System.identityHashCode(name1));
+
+		//Immutable - Not able to modify the object..
+		String immu = new String("Imm");
+		System.out.println("Immutable:"+immu+" "+System.identityHashCode(immu));
+		String immu1 = new String("Imm");
+		System.out.println("Immutable:"+immu1+" "+System.identityHashCode(immu1));
+		
+		
+		Set<String> muSet = new HashSet<>();
+		muSet.add(immu);
+		muSet.add(immu1);
+		System.out.println(muSet);
+		
+		Set<StringBuilder> uniqSet = new HashSet<>();
+		uniqSet.add(name);
+		uniqSet.add(name1);
+		System.out.println(uniqSet);
+	}
+}

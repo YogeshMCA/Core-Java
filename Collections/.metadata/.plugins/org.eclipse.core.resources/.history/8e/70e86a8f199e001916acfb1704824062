@@ -1,0 +1,17 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetCollection {
+
+	public static void main(String arg[]) {
+		String na = "SSS";
+		StringBuilder name= new StringBuilder("AAAA");
+		System.out.println(name.hashCode());
+		name.append("XXX");
+		System.out.println(name.hashCode());
+		Set<StringBuilder> uniqSet = new HashSet<>();
+		uniqSet.add(name);
+		uniqSet.add(new StringBuilder("AAAA"));
+		System.out.println(uniqSet);
+	}
+}
