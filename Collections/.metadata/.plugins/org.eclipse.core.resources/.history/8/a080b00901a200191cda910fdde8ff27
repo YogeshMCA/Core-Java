@@ -2,7 +2,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -20,7 +19,6 @@ public class SetCollection {
 		
 	//Mutable
 		StringBuilder name= new StringBuilder("AAAA");
-		StringBuilder name2= new StringBuilder("CCCC");
 		StringBuilder name1= new StringBuilder("AAAA");
 		System.out.println("Name:"+name+" "+name.hashCode());
 		//name.append("XXX");
@@ -31,7 +29,6 @@ public class SetCollection {
 		 */
 		Set<StringBuilder> uniqSet = new HashSet<>();
 		uniqSet.add(name);
-		uniqSet.add(name2);
 		uniqSet.add(name1);
 		System.out.println(uniqSet);
 		
@@ -60,7 +57,7 @@ public class SetCollection {
 		}
 		System.out.println(muSet.size());
 		
-	//TreeSet - Maintain the ascending order by default. We can pass Comparator as an argument
+	//TreeSet
 		Set<String> treeSet = new TreeSet<>(); //This will consider case sensitive
 		treeSet.add("1FDFDFD");	    
 		treeSet.add("Z");
@@ -77,18 +74,7 @@ public class SetCollection {
 		treeSetComp.add("1FDFDFD");	    
 		treeSetComp.add("Z");
 		treeSetComp.add("fDFDFD12");
-		
 		System.out.println(treeSetComp); //[1FDFDFD, Z, fDFDFD12]
-		
-	//LinkedHashSet - Maintaining the insertion order
-		String n1 = new String("Name");
-		String n2 = new String("NameAA");
-		String n3 = new String("NameBB");
-		Set<String> lnkdSet = new LinkedHashSet<>();
-		lnkdSet.add(n1);
-		lnkdSet.add(n2);
-		lnkdSet.add(n3);
-		System.out.println(lnkdSet);
 		
 	}
 }

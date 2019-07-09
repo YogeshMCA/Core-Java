@@ -60,7 +60,7 @@ public class SetCollection {
 		}
 		System.out.println(muSet.size());
 		
-	//TreeSet - Maintain the ascending order by default. We can pass Comparator as an argument
+	//TreeSet
 		Set<String> treeSet = new TreeSet<>(); //This will consider case sensitive
 		treeSet.add("1FDFDFD");	    
 		treeSet.add("Z");
