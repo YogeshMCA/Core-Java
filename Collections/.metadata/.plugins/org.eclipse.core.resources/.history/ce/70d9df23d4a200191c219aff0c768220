@@ -1,0 +1,50 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class MapCollection {
+
+	public static void main(String arg[]){
+		
+		StringBuffer sb1= new StringBuffer("A");
+		StringBuffer sb2=new StringBuffer("B");
+		StringBuffer sb3=new StringBuffer("C");
+		StringBuffer sb4=new StringBuffer("C");
+		
+		Map<StringBuffer,String> map = new HashMap<>();
+		
+		map.put(sb1, "AAA");
+		map.put(sb2, "BBB");
+		map.put(sb3, "CCC");
+		map.put(sb4, "DDD");
+		
+		System.out.println(map);
+		
+		
+		String s1 = new String("A");
+		String s2 = new String("B");
+		String s3 = new String("C");
+		String s4 = new String("D");
+		
+		Map<String,String> map1 = new HashMap<>();
+		
+		map1.put(s1, "AAA");
+		map1.put(s2, "BBB");
+		map1.put(s3, "CCC");
+		map1.put(s4, "DDD");
+		
+		System.out.println(map1);
+		
+		Set<Map.Entry<String, String>> set = map1.entrySet();
+		System.out.println(set);
+		
+		Set<String> treeSet = new TreeSet(set);
+		System.out.println(treeSet);
+		
+		
+		
+		
+	}
+
+}

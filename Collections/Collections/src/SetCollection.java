@@ -42,11 +42,11 @@ public class SetCollection {
 		System.out.println("Immutable:"+immu+" "+immu.hashCode());
 		System.out.println("Immutable:"+immu1+" "+immu1.hashCode());
 		
-		
+	// Set - allow null value(except TreeSet) and maintain unique value.	
 		Set<String> muSet = new HashSet<>();
 		muSet.add(immu);
 		muSet.add(ss);
-				
+		muSet.add(null);		
 		Iterator itr = muSet.iterator();
 		/*
 		 ConcurrentModificationException / Fail fast - Adding values into the list/set once iterator created.
@@ -60,11 +60,12 @@ public class SetCollection {
 		}
 		System.out.println(muSet.size());
 		
-	//TreeSet - Maintain the ascending order by default. We can pass Comparator as an argument
+	//TreeSet - Maintain the ascending order by default and doesn't accept null value. We can pass Comparator as an argument
 		Set<String> treeSet = new TreeSet<>(); //This will consider case sensitive
 		treeSet.add("1FDFDFD");	    
 		treeSet.add("Z");
 		treeSet.add("fDFDFD12");
+		//treeSet.add(null);
 		System.out.println(treeSet); //[1FDFDFD, Z, fDFDFD12]
 		
 		Set<String> treeSetNc = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);//This won't consider case sensitive
