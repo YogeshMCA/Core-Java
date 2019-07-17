@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.example.Exceptions.Exception.java&apos; to &apos;Exceptions.java&apos;&#x0D;&#x0A;- Original project: &apos;Collections&apos;&#x0D;&#x0A;- Original element: &apos;com.example.Exceptions.Exception.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.Exceptions.Exceptions.java&apos;" description="Rename compilation unit &apos;Exception.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.example.Exceptions{Exception.java" name="Exceptions.java" references="false" stamp="1563337517216" version="1.0"/>
+</session>

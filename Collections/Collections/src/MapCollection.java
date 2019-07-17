@@ -69,6 +69,13 @@ public class MapCollection {
         	
         }  
         
+        
+     /*Tree Map - Tree uses Red-Black tree data structure to store data.
+      * Performance wise TreeMap is slow if you will compare with HashMap and LinkedHashMap.
+      * The left element will always be logically less than the parent element.
+		The right element will always be logically greater than OR equal to a parent element
+      */
+        
         Map<String,String> treeHashMp = new TreeMap<>();
         treeHashMp.put(s1, "AAA");
         treeHashMp.put(s2, "BBB");
