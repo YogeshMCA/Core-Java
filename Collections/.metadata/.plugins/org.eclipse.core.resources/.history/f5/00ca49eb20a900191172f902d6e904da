@@ -28,8 +28,6 @@ public class Exceptions {
 	Child child = new Child();
 	try{
 		child.overrider();
-	}catch(Exception e){
-		System.out.println("Catch Block");
 	}
 	finally{
 		System.out.println("Finally");

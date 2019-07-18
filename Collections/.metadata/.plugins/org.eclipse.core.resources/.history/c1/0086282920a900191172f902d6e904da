@@ -1,6 +1,6 @@
 package com.example.Exceptions;
 
-import java.sql.SQLException;
+import java.io.FileReader;
 
 public class Exceptions {
 
@@ -19,21 +19,12 @@ public class Exceptions {
 		 * If the superclass method does not declare an exception, subclass overridden method cannot declare the "checked" exception but it can declare "unchecked" exception.
 		 * 
 		 * If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
-		 * 
-		 * Can not use Try with Finally only when a method is declared with Checked exception
 		 */
 		
 	Transfer trans = new Transfer();
 	
 	Child child = new Child();
-	try{
-		child.overrider();
-	}catch(Exception e){
-		System.out.println("Catch Block");
-	}
-	finally{
-		System.out.println("Finally");
-	}
+	child.overrider();
 	
 	try{
 		int a[] ={10};
@@ -76,7 +67,7 @@ class Parent{
 }
 
 class Child{
-	void overrider()throws SQLException{
+	void overrider()throws Exception{
 		System.out.println("Child Class");
 	}
 }
