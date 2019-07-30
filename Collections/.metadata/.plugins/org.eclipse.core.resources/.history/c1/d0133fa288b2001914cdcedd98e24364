@@ -1,0 +1,7 @@
+package com.example.java8;
+
+@FunctionalInterface
+public interface LambdaInterface{
+	void disp(String s);
+	void display(String s,String s1);
+}

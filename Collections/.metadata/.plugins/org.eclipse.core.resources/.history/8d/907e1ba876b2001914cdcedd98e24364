@@ -67,8 +67,7 @@ class Transfer{
 
 
 /*
- * Overriding
- * Sub class visibility should be greater than or equal to parent class visibility 
+ * Overriding 
  */
 class Parent{
 	void overrider()throws Exception{
@@ -76,7 +75,7 @@ class Parent{
 	}
 }
 
-class Child extends Parent{
+class Child{
 	void overrider()throws SQLException{
 		System.out.println("Child Class");
 	}
