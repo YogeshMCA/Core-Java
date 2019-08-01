@@ -1,0 +1,46 @@
+package com.example.Generics;
+
+public class GenericSuperExtends {
+
+	public static void main(String[] args) {
+		
+		F<A> a1 = new F<A>();
+		a1.setT(new A());
+		a1.getT().toString();
+
+	}
+
+}
+
+class F<? super T>{
+	T t;
+
+	public T getT() {
+		return t;
+	}
+
+	public void setT(T t) {
+		this.t = t;
+	}
+	
+}
+
+class A{
+	String a;
+	public String toString(){
+		return a;
+	}
+}
+
+class B extends A{
+	B(String a){
+		this.a = a;
+	}
+}
+
+class D extends A{
+	D(String a){
+		this.a = a;
+	}
+}
+

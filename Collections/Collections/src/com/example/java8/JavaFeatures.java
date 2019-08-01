@@ -1,10 +1,17 @@
 package com.example.java8;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+
+/*Why Lambda 
+ * 	Enable to treat functionality as a method argument, or code as data.
+	A function that can be created without belonging to any class.
+	A lambda expression can be passed around as if it was an object and executed on demand.
+	
+	
+ */
 
 public class JavaFeatures {
 
@@ -13,7 +20,7 @@ public class JavaFeatures {
 
 			@Override
 			public int compare(String arg0, String arg1) {
-				return Integer.compare(arg0.length(), arg1.length());
+				return arg0.compareTo(arg1);
 			}
 			
 		
@@ -41,13 +48,23 @@ public class JavaFeatures {
 		for(String s: str)
 			System.out.println(s);
 		
-		List<String> lst = new ArrayList<String>();
+		List<String> lst = new LinkedList<String>();
 		lst.add("AAA");
 		lst.add("BBB");
 		lst.add("DDD");
 		lst.add("FFF");
-		
+		lst.sort(comparator);
 		lst.forEach(s->System.out.print(s));
+		
+
+	
 	}
 
 }
+
+
+
+
+
+
+

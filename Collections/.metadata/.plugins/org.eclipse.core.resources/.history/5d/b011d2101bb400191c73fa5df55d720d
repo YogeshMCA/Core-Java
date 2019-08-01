@@ -1,0 +1,27 @@
+package com.example.Generics;
+
+public class GenericSuperExtends {
+
+	public static void main(String[] args) {
+
+
+	}
+
+}
+
+class A{
+	int a;
+}
+
+class B extends A{
+	B(int a){
+		this.a = a;
+	}
+}
+
+class D extends A{
+	D(int a){
+		this.a = a;
+	}
+}
+

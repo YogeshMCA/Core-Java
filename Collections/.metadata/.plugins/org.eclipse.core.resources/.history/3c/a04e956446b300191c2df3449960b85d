@@ -1,0 +1,38 @@
+package com.example.Inheritance;
+
+import com.example.java8.A;
+import com.example.java8.B;
+import com.example.java8.C;
+
+public class AboutInhr {
+
+	public static void main(String[] args) {
+		A a = new C();
+		a.disp(); 
+		B b = new C();
+		b.disp();
+		C c = new C();
+		c.disp();
+
+	}
+
+}
+
+abstract class A{
+	public Number disp(){
+		System.out.println("A");
+		return 0;
+	}
+}
+
+interface B{
+	public Number disp();
+}
+
+class C extends A implements B{
+	public Integer disp(){
+		super.disp();
+		System.out.println("C");
+		return 0;
+	}
+}

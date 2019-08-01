@@ -1,0 +1,43 @@
+package com.example.Generics;
+
+public class GenericSuperExtends {
+
+	public static void main(String[] args) {
+		A aa = new A();
+		aa.a ="Hai";
+		F<A> a1 = new F<A>();
+		a1.disp();
+
+	}
+
+}
+
+class F<T>{
+	F(){
+		T t = (T) new Object();
+	}
+	public void disp(){
+		
+		System.out.println(a.toString());
+	}
+}
+
+class A{
+	String a;
+	public String toString(){
+		return a;
+	}
+}
+
+class B extends A{
+	B(String a){
+		this.a = a;
+	}
+}
+
+class D extends A{
+	D(String a){
+		this.a = a;
+	}
+}
+
