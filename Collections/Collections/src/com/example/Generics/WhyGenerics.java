@@ -48,6 +48,9 @@ public class WhyGenerics {
 		List<? extends Person> personLst = new ArrayList<>();
 		personLst = partners; 
 		
+		List<?> sa = new ArrayList<>();
+		
+		
 		List<Object> obj = new ArrayList<>();
 		obj.add("String");
 		obj.add(1);
@@ -67,16 +70,15 @@ public class WhyGenerics {
 		List<? super Integer> lo = new ArrayList<>();
 		lo.add(new Integer(101));
 		//lo.add(new Number(101));
+		lowerBound(lo);
 		
 		List<Number> num = new ArrayList<>();
 		num.add(105);
 		num.add(10.5);
+		lowerBound(num);
 		
 		List<Double> dou = new ArrayList<>();
 		dou.add(105.5);
-		
-		lowerBound(lo);
-		lowerBound(num);
 		//lowerBound(dou);
 		
 		upperBound(num);
