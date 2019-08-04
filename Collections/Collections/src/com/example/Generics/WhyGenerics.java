@@ -1,6 +1,7 @@
 package com.example.Generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /*
@@ -24,32 +25,65 @@ public class WhyGenerics {
 		
 		// Wildcard Example
 		/*Array are Covariant type - an array of type T[] may contain elements of type T or any subtype of T.
-		 * Also an array S[] is a subtype of the array T[] if S is a subtype of T. 
-		 * Disadvantage(Runtime Exception) - Exception occur trying to add Float, even Float is subtype of Number here.   
+		 * We can assign array of S to an array of T type, if S is a subtype of T. 
+		 * But we will get Disadvantage(Runtime Exception)
+		 * 
+		 * This we can capture it in compile time if we use collections
+		 * 
+		 * In Parameter:
+		 * 	List<? super T> - It will only accept list of T and its Parent type
+		 * 	List<? extends T> - It will only accept list of T and its sub types   
 		 */
-		Integer[] integer = {10,20};
-		Number[] number = integer;
-		//number[0] = 32.0; //ArrayStoreException - It will accept only Integer value
 		
-		Partner partner1 = new Partner("YYY", "55");
+		Number[] nu = new Number[2];
+		nu[0]=10;
+		nu[1]=10.5;
+		
+		
+		Integer[] integer = new Integer[2];
+		integer[0]=10;
+		integer[1]=100;
+		Number[] number = new Number[2];
+		number = integer;
+		number[0] = 32.0; //ArrayStoreException - It will accept only Integer value
+		
+		
+		Person persons[] = new Person[2]; //Super class
+		Partner partner1 = new Partner("YYY", "55"); //Sub class
 		Partner partner2 = new Partner("XXX", "44");
-		Person persons[] = new Person[2];
 		persons[0] = partner1;
 		persons[1] = partner2;
 		displayAll(persons);
 		
 		/*
-		 * List are Non-Covariant type - Can not assign List<S> to List<T>, S is subclass of T. But assign it with ? extends T 
+		 * List are Non-Covariant type - Can not assign List<S> to List<T>, S is subclass of T. But can assign it with <? extends T> 
 		 */
 		List<Partner> partners = new ArrayList<>();
 		partners.add(partner1);
 		partners.add(partner2);
 		
-		List<? extends Person> personLst = new ArrayList<>();
-		personLst = partners; 
+		List<Person> personsLst = new ArrayList<>();
+		personsLst.add(new Person("Ra","44"));
+		personsLst.add(new Person("Ram","34"));
+		
+		/*
+		 * List<? extends T> - We can only "assign list of S", where S is sub type of T. But not add 
+		 */
+		List<? extends Person> personExt = new ArrayList<>();
+		//personExt.add(new Partner("er","4"));
+		personExt = partners;
+		
+		/*
+		 * List<? super T> - We can only "assign list of S", where S is super type of T.
+		 * We can add S type into list, not parent type of T
+		 */
+		List<? super Partner> partnerLst = new ArrayList<>();
+		//partnerLst.add(new Person("as","1"));
+		partnerLst = personsLst;
+		
 		
 		List<?> sa = new ArrayList<>();
-		
+		sa.add(null); // Only accept null
 		
 		List<Object> obj = new ArrayList<>();
 		obj.add("String");
@@ -91,10 +125,14 @@ public class WhyGenerics {
 		
 		List<AA> subType = new ArrayList<>();
 		subType.add(new AA());
+		subType.add(new BB());
 		lowerBoundWithClass(subType);
 		for(AA aa : subType)
 			System.out.println(aa);
 		
+		List<BB> subType1 = new ArrayList<>();
+		subType1.add(new BB());
+		//lowerBoundWithClass(subType1); Won't accept
 		
 		//Generic - limitation in method overloading
 		overload(qo);
@@ -144,7 +182,7 @@ public class WhyGenerics {
 	}
 	
 	// This method will accept List of parent types of BB(AA) and BB itself.
-	public static void lowerBoundWithClass(List<? super BB> obj){
+	public static void lowerBoundWithClass(List<? super AA> obj){
 		//Obj - Can add all BB sub type
 		obj.add(new BB());
 		obj.add(new CC());

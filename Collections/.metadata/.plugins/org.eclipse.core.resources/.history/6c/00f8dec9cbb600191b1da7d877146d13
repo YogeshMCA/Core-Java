@@ -1,0 +1,25 @@
+package com.example.java8;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+public class Streams {
+
+	public static void main(String[] args) {
+		List<String> string = new ArrayList<>();
+		//string.add("Yogesh");
+		string.add("Arun");
+		//string.add("Kamaraj");
+		//string.add("Mohan");
+		//string.add("amar");
+		string.add("AAA");
+		
+		Supplier<Stream<String>> strm = Stream.of(string);
+		System.out.println(strm.get().allMatch(p->p.startsWith("A")));
+		System.out.println(strm.get().anyMatch(a->a.startsWith("A")));
+
+	}
+
+}

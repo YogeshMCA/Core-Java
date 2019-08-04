@@ -1,0 +1,10 @@
+package com.example.java8;
+
+class FilterObjName implements Filter<Empl>{
+
+	@Override
+	public boolean filter(Empl emp) {
+		return emp.name.startsWith("K");
+	}
+	
+}

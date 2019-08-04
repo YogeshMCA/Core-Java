@@ -19,7 +19,12 @@ public static void main(String ar[]){
 	str.add(st2);
 	
 	List<String> ss = new ArrayList<>();
-	ss.add(0, st1);
+	ss.add("AAAAAAA");
+	ss.add("BBBBBB");
+	updateList(ss);
 	System.out.println(ss);
+}
+public static void updateList(List<String> lst){
+	lst.add("KKKKK");
 }
 }

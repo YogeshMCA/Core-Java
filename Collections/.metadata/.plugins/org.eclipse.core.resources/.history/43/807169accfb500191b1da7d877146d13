@@ -1,0 +1,11 @@
+package com.example.java8;
+
+public class FilterStringName implements Filter {
+
+	@Override
+	public boolean filter(Object emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

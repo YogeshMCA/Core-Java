@@ -9,10 +9,13 @@
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
 			<item value="lowerBoundWithClass"/>
+			<item value="lowerBoundInt"/>
+			<item value="wildCard"/>
+			<item value="collection"/>
+			<item value="legacyMergeSort"/>
+			<item value="sort"/>
+			<item value="lowerBound"/>
 			<item value="getWild"/>
-			<item value="E"/>
-			<item value="super"/>
-			<item value="lowerBoundClass"/>
 		</list>
 		<list key="replacehistory">
 		</list>

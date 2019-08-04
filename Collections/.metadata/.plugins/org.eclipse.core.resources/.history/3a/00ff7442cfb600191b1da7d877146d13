@@ -1,0 +1,27 @@
+package com.example.java8;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Streams {
+
+	public static void main(String[] args) {
+		List<String> string = new ArrayList<>();
+		//string.add("Yogesh");
+		string.add("Arun");
+		//string.add("Kamaraj");
+		string.add("Mohan");
+		//string.add("amar");
+		string.add("AAA");
+		
+		Stream<String> strm = string.stream();
+		String ss = strm.filter(element -> {logger("Filter");return element.startsWith("A");}).map(element->{logger("Map");return element.toUpperCase();}).toString();
+		
+
+	}
+	public static void logger(String st){
+		System.out.println(st);
+	}
+
+}
