@@ -46,15 +46,15 @@ public class Streams {
 		 * Parallel Stream
 		 */
 		long start,end;
-		Stream<String> strm3 = string.stream();
 		start = System.currentTimeMillis();
-		long count = strm3.filter(s->s.endsWith("A")).count();
+		Stream<String> strm3 = string.stream();
+		long count = strm3.filter(s->s.endsWith("r")).count();
 		end = System.currentTimeMillis();
 		System.out.println("Time taken:"+(end-start) +"Result "+count);
 		
-		Stream<String> strm4 = string.parallelStream();
 		start = System.currentTimeMillis();
-		long count1 = strm4.filter(t->t.endsWith("A")).count();
+		Stream<String> strm4 = string.parallelStream();
+		long count1 = strm4.filter(t->t.endsWith("r")).count();
 		end = System.currentTimeMillis();
 		System.out.println("Time taken:"+(end-start) +"Result "+count1);
 		

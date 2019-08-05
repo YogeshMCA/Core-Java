@@ -10,14 +10,12 @@ public class Streams {
 
 	public static void main(String[] args) {
 		List<String> string = new ArrayList<>();
-		for(int i=1;i<=100;i++){
-			string.add("Yogesh");
-			string.add("Arun");
-			string.add("Kamaraj");
-			string.add("Mohan");
-			string.add("amar");
-			string.add("Amar");
-		}
+		string.add("Yogesh");
+		string.add("Arun");
+		string.add("Kamaraj");
+		string.add("Mohan");
+		string.add("amar");
+		string.add("Amar");
 		
 		Stream<String> strm = string.stream();
 		List<String> ss = strm.filter(element -> {logger("Filter");return element.startsWith("A");})
@@ -38,27 +36,9 @@ public class Streams {
 		Predict p = new Predict();
 		//String name = strm2.filter(p).findAny().orElse("Name not in");
 		//String name = strm2.filter(s->s.startsWith("B")).findAny().orElse("Name not in");
-		List<String> name = strm2.filter(p).map(e->e.toString()).collect(Collectors.toList());
+		List<String> name= strm2.filter(p).map(p->p.toString()).collect(Collectors.toList());
 		System.out.println(name);
-		
-		
-		/*
-		 * Parallel Stream
-		 */
-		long start,end;
-		Stream<String> strm3 = string.stream();
-		start = System.currentTimeMillis();
-		long count = strm3.filter(s->s.endsWith("A")).count();
-		end = System.currentTimeMillis();
-		System.out.println("Time taken:"+(end-start) +"Result "+count);
-		
-		Stream<String> strm4 = string.parallelStream();
-		start = System.currentTimeMillis();
-		long count1 = strm4.filter(t->t.endsWith("A")).count();
-		end = System.currentTimeMillis();
-		System.out.println("Time taken:"+(end-start) +"Result "+count1);
-		
-		
+
 	}
 	public static void logger(String st){
 		System.out.println(st);
@@ -71,7 +51,7 @@ class Predict implements Predicate<String>{
 	@Override
 	public boolean test(String t) {
 			System.out.println("Test");
-			return (t.startsWith("a") || (t.startsWith("A")));
+			return t.startsWith("B");
 	}
 	
 }

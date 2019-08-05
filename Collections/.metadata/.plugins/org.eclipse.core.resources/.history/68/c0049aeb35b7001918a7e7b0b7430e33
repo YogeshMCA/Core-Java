@@ -89,7 +89,6 @@ public class Lambda {
 		//FilterList.filterObj(string,(s)->s.startsWith("Y"));
 		//FilterList.filterObj(string,new FilterStringName());
 		//FilterList.filterObj(string,(s)->{System.out.println(s);return s.startsWith("Y");});
-		//FilterList.filterObj(string,s->methodRef(s));
 		FilterList.filterObj(string,Lambda::methodRef);
 		
 		for(String e: string)
