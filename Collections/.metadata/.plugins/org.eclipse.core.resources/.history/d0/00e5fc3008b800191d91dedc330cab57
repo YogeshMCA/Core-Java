@@ -58,6 +58,11 @@ public class Streams {
 		end = System.currentTimeMillis();
 		System.out.println("Time taken:"+(end-start) +"Result "+count1);
 		
+		List<Object> obj = new ArrayList<>();
+		obj.add("String");
+		obj.add(1);
+		
+		System.out.println((String)obj.get(1));
 		
 		
 	}

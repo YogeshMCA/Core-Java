@@ -1,0 +1,26 @@
+
+public class ClonableExample {
+	public static void main(String arg[]){
+		
+	}
+
+}
+
+
+class First implements Cloneable{
+	String sname;
+	Books book;
+	First(String sname,Books book){
+		this.sname = sname;
+		this.book = book;
+	}
+}
+
+class Books{
+	int Id;
+	String name;
+	Books(int id, String name){
+		this.Id = id;
+		this.name = name;
+	}
+}

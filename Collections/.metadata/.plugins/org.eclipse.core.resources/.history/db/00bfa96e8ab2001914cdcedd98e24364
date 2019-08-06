@@ -1,7 +1,0 @@
-package com.example.java8;
-
-@FunctionalInterface
-public abstract interface LambdaInterface{
-	public abstract void disp(String s);
-	public abstract boolean equals(Object obj);
-}

@@ -1,0 +1,35 @@
+
+public class ClonableExample {
+	public static void main(String arg[]){
+		Books book = new Books(1,"C++");
+		First first = new First("Yogesh",book);
+		First fir = 
+		System.out.println(first);
+	}
+
+}
+
+
+class First implements Cloneable{
+	String sname;
+	Books book;
+	First(String sname,Books book){
+		this.sname = sname;
+		this.book = book;
+	}
+	protected Object clonable()throws CloneNotSupportedException{
+		return (First)super.clone();
+	}
+	public String toString(){
+		return this.sname+" "+this.book.Id+" "+this.book.name;
+	}
+}
+
+class Books{
+	int Id;
+	String name;
+	Books(int id, String name){
+		this.Id = id;
+		this.name = name;
+	}
+}

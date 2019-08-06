@@ -59,7 +59,6 @@ public class Streams {
 		System.out.println("Time taken:"+(end-start) +"Result "+count1);
 		
 		
-		
 	}
 	public static void logger(String st){
 		System.out.println(st);
