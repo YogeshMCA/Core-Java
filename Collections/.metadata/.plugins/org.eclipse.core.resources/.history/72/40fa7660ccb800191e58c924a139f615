@@ -44,10 +44,12 @@ public class ClonableExample {
 		List<Copy> copyLst2 = new ArrayList<>();
 		for(int i=1;i<=5;i++){
 			copy = new Copy();
+			copy.setName("Ram Kumar");
+			copy.setName("Kumar");
 			copy.setName("Ram");
 			copyClone = copy.clone();
 			copyLst1.add(copy);
-			copyLst2.add(copyClone);
+			copyLst2.add(copy);
 		}
 		copyLst1.forEach(c->c.setName("Yogesh"));
 		copyLst1.forEach(s->System.out.println(s.getName()));

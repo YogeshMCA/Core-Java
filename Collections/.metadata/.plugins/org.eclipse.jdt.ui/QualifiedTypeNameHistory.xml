@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.example.java8.LambdaInterface"/>
 <fullyQualifiedTypeName name="java.util.function.Consumer"/>
 <fullyQualifiedTypeName name="com.example.Inheritance.AboutInhr"/>
@@ -34,8 +33,9 @@
 <fullyQualifiedTypeName name="com.example.java8.NameWithC"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
 <fullyQualifiedTypeName name="java.util.function.Predicate"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.CloneNotSupportedException"/>
 </qualifiedTypeNameHistroy>
