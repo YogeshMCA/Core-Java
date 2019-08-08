@@ -1,0 +1,29 @@
+package com.example.DesignPatterns;
+
+public class Singleton {
+
+	public static void main(String[] args) {
+		Single obj = Single.getInstance();
+		obj.display();
+		System.out.println(obj.hashCode());
+		Single obj1 = Single.getInstance();
+		System.out.println(obj1.hashCode());
+	}
+
+}
+
+class Single{
+	private static Single sgObj;
+	private Single(){
+		
+	}
+	public static Single getInstance(){
+		if(sgObj==null){
+			return new Single();
+		}
+		return sgObj;
+	}
+	public void display(){
+		System.out.println("Singleton Class called");
+	}
+}

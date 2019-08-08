@@ -1,0 +1,23 @@
+package com.example.DesignPatterns;
+
+public class Singleton {
+
+	public static void main(String[] args) {
+		Single obj = new Single();
+
+	}
+
+}
+
+class Single{
+	private Single sgObj;
+	private Single(){
+		
+	}
+	public Single getInstance(){
+		if(sgObj==null){
+			return new Single();
+		}
+		return sgObj;
+	}
+}
