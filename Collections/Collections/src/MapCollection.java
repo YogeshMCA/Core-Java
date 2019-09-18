@@ -10,6 +10,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class MapCollection {
 
@@ -85,9 +87,28 @@ public class MapCollection {
         //treeHashMp.put(null, "AAA");
                 
 		System.out.println(treeHashMp);
+		
+		
+		Map<String,String> streamSort = new HashMap<>();
+		streamSort.put("A", "AAA");
+		streamSort.put("B", "BBB");
+		streamSort.put("C", "CCC");
+		streamSort.put("F", "FFF");
+		streamSort.put("D", "DDD");
+		
+		System.out.println("========HashMap Sorting Using Streams");
+		//streamSort.entrySet().stream().sorted(Entry.comparingByKey()).forEach(System.out::println);
+		//streamSort.entrySet().stream().sorted(new SortHashValue()).forEach(System.out::println);
+		Map<String,String> streamSort1 = streamSort.entrySet().stream().sorted(new SortHashValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+		System.out.println(streamSort1);
+		System.out.println("-----Using Lambda----");
+		streamSort.entrySet().stream().sorted((e1,e2)->{return(e1.getKey().compareTo(e2.getKey()));}).forEach(System.out::println);
+        
 	}
 
 }
+
+
 
 
 class SortHashValue implements Comparator<Map.Entry<String, String>>{

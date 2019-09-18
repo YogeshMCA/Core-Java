@@ -8,10 +8,10 @@ import java.lang.reflect.ReflectPermission;
 public class Singleton {
 
 	public static void main(String[] args) throws Exception {
-		/*Objects obj = Single.getInstance();
+		Objects obj = Single.getInstance();
 		Objects obj1 = Single.getInstance();
 		System.out.println("Obj HashCode:"+obj.hashCode()+" Obj1 HashCode"+obj1.hashCode()+" ==:"+(obj1==obj)+"Equal:"+obj1.equals(obj));
-		*/
+		
 		Constructor<?>[] con = Single.class.getDeclaredConstructors();
 		con[0].setAccessible(true);
 		Objects obj2 = (Single)con[0].newInstance();

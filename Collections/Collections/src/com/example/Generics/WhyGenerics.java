@@ -23,9 +23,10 @@ public class WhyGenerics {
 		//display(collections);
 		
 		
-		// Wildcard Example
+
 		/*Array are Covariant type - an array of type T[] may contain elements of type T or any subtype of T.
-		 * We can assign array of S to an array of T type, if S is a subtype of T. 
+		 * We can assign array of S to an array of T type, if S is a subtype of T.
+		 * Because array knows its element type during runtime. 
 		 * But we will get Disadvantage(Runtime Exception)
 		 * 
 		 * This we can capture it in compile time if we use collections
@@ -35,15 +36,18 @@ public class WhyGenerics {
 		 * 	List<? extends T> - It will only accept list of T and its sub types   
 		 */
 		
-		Number[] nu = new Number[2];
+		Number[] nu = new Integer[2];
 		nu[0]=10;
-		nu[1]=10.5;
+		//nu[1]=10.5; //Runtime Exception - ArrayStoreException - It will accept only Integer value
 		
 		
 		Integer[] integer = new Integer[2];
 		integer[0]=10;
 		integer[1]=100;
 		Number[] number = new Number[2];
+		number[0]=10;
+		number[1]=100;
+		//integer=(Integer[]) number; //Runtime Exception - ClassCastException - Can not convert number to integer
 		number = integer;
 		number[0] = 32.0; //ArrayStoreException - It will accept only Integer value
 		
@@ -75,10 +79,11 @@ public class WhyGenerics {
 		
 		/*
 		 * List<? super T> - We can only "assign list of S", where S is super type of T.
-		 * We can add S type into list, not parent type of T
+		 * We can add T type into list, not parent type of T(S)
 		 */
 		List<? super Partner> partnerLst = new ArrayList<>();
 		//partnerLst.add(new Person("as","1"));
+		partnerLst.add(new Partner("as","1"));
 		partnerLst = personsLst;
 		
 		

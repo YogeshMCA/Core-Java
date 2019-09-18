@@ -4,6 +4,12 @@ public class GenericSuperExtends {
 
 	public static void main(String[] args) {
 		
+		ParentType<ParentImpl> pType = new ParentType<>();
+		ParentImpl parentImpl = new ParentImpl();
+		parentImpl.setName("ParentImpl Class");
+		pType.setParentInterfcace(parentImpl);
+		pType.getParentInterfcace().display();
+		
 		F<ChildB> a1 = new F<>();
 		a1.setT(new ChildB("BB Class"));
 		getExtends(a1);
@@ -67,6 +73,47 @@ class F<T>{
 
 	public void setT(T t) {
 		this.t = t;
+	}
+	
+}
+
+interface ParentInterface{
+	void display();
+}
+
+class ParentImpl implements ParentInterface{
+	String name;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void display(){
+		System.out.println(name);
+	}
+}
+
+/*
+ * class ParentType<ParentInterface>{} - This will give an warning:"The type parameter ParentInterface is hiding the type ParentInterface"
+ * ParentType<ParentA> parent = new ParentType<>(); - This will allow us to add other classes also(No use of generic) 
+ * Here compiler expects a generic type parameter, and not a concrete implementation/abstract.
+ * Always be with generic type: class ParentType<T extends ParentInterface>{}
+ */
+
+class ParentType<T extends ParentInterface>{
+
+	public T parentInterfcace;
+
+	public T getParentInterfcace() {
+		return parentInterfcace;
+	}
+	
+	public void setParentInterfcace(T parentInterfcace) {
+		this.parentInterfcace = parentInterfcace;
 	}
 	
 }

@@ -32,14 +32,18 @@ public class Streams {
 		strm1.filter(e -> {logger("Filter");return e.startsWith("A");}).findFirst();
 		
 		/*
+		 *  Predicate is a functional interface and can be used as the assignment target for a lambda expression or method reference.
+		 *  Can use predicates anywhere where you need to evaluate a condition on group/collection of similar objects such that evaluation can result either in true or false.
 		 * Creating user defined Predicate class (i.e) Implement user defined filter
+		 * 
 		 */
+		System.out.println("======");
 		Stream<String> strm2 = string.stream();
 		Predict p = new Predict();
 		//String name = strm2.filter(p).findAny().orElse("Name not in");
 		//String name = strm2.filter(s->s.startsWith("B")).findAny().orElse("Name not in");
 		List<String> name = strm2.filter(p).map(e->e.toString()).collect(Collectors.toList());
-		System.out.println(name);
+		System.out.println("==="+name);
 		
 		
 		/*

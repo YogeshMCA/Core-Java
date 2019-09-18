@@ -16,6 +16,14 @@ import java.util.List;
 	
 	Basically "this" can't be used in static method or class. But can be used inside anonymous class.
 	Also "this" can not be used in lambda, when lambda is inside any static method. But can use it if lambda is in non-static block
+	
+	@FunctionalInterface:
+	A functional interface has only one abstract method but it can have multiple default methods.
+	@FunctionalInterface annotation is used to ensure an interface can’t have more than one abstract method. The use of this annotation is optional.
+	The java.util.function package contains many builtin functional interfaces in Java 8.
+		Predicate
+		BinaryOperator
+		Function
  */
 
 public class Lambda {
@@ -101,8 +109,7 @@ public class Lambda {
 		return s.startsWith("Y");
 	}
 	
+	
 }
-
-
 
 

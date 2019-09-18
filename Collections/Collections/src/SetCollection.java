@@ -9,15 +9,17 @@ import java.util.TreeSet;
 /*
  *  StringBuffer and StringBuilder classes not overriding equals() method and hashcode() method where as String class is overriding these two methods.
 Basically Strings are Immutable means Whenever we try to change the value of string result will be new string. So string content wont change.
-StringBuffer main use is mutable means when we append a string to it it will add to existing object.
+StringBuffer is mutable means when we append a string it will add to existing object.
 When the content changes the hashcode will changes.
 
-HashSet internally uses HashMap(Eliminate duplicate value) to store the value. 
+HashSet internally uses HashMap(Eliminate duplicate value) to store the value.
+ 
  */
 public class SetCollection {
 
 	public static void main(String arg[]) {
 		
+			
 	//Mutable
 		StringBuilder name= new StringBuilder("AAAA");
 		StringBuilder name2= new StringBuilder("CCCC");

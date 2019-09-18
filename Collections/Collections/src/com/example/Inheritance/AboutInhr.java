@@ -11,6 +11,9 @@ public class AboutInhr{
 		 
 		AboutInhr ai = new AboutInhr();
 		ai.generic((s)->{s=s+"RR";System.out.print(s);});
+		
+		B b = new C();
+		b.disp();
 
 	}
 	public void generic(Consume cc){
@@ -36,15 +39,14 @@ abstract class A{
 }
 
 interface B{
-	default public void disp(){
+	public default void disp(){
 		System.out.println("B");
 		
 	}
 }
 
 class C implements B{
-	public void disp(){
-		//super.disp();
+	public void disp1(){
 		System.out.println("C");
 		
 	}
