@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SortHashValue" key="selection"/>
+		<item value="filter" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="true" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="filter"/>
+			<item value="red"/>
 			<item value="SortHashValue"/>
 			<item value="linked"/>
 			<item value="equals"/>
 			<item value="hash"/>
 			<item value="Hash"/>
 			<item value="hashcode"/>
-			<item value="Covariant"/>
-			<item value="newInstance"/>
 		</list>
 		<list key="replacehistory">
 		</list>

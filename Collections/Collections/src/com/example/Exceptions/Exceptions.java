@@ -42,6 +42,7 @@ public class Exceptions {
 		/*
 		 * Multiple Exception in a catch block - Should not be Parent - Child class Eg: catch(Exception | NullPointerException e)
 		 */
+		// Class.forName("Hello"); //ClassNotFoundException - Checked exception
 		System.out.println(e);
 	}
 	
@@ -68,7 +69,9 @@ class Transfer{
 
 /*
  * Overriding
- * Sub class visibility should be greater than or equal to parent class visibility 
+ * Sub class visibility can be greater than or equal to parent class visibility 
+ * If a parent class method doesn't have any exception, then child class method can have unchecked exception.
+ * If a parent class method does have checked exception, then child class method can have same/subclass checked/unchecked exception.
  */
 class Parent{
 	void overrider()throws Exception{
@@ -77,7 +80,7 @@ class Parent{
 }
 
 class Child extends Parent{
-	void overrider()throws SQLException{
+	void overrider() throws ArrayIndexOutOfBoundsException{
 		System.out.println("Child Class");
 	}
 }

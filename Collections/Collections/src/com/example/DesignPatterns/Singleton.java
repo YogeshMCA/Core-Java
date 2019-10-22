@@ -46,6 +46,10 @@ class Single implements Objects{
 	public static void display(){
 		System.out.println("Singleton Class called");
 	}
+	
+	public void display1(){
+		System.out.println("Singleton Class called");
+	}
 }
 
 interface Objects{
@@ -53,5 +57,7 @@ interface Objects{
 	 * Can not override the static method, it should be defined in interface itself
 	 */
 	static void display() {
+	}
+	default void display1() {
 	}
 }

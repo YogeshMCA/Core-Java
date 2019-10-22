@@ -5,12 +5,12 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class MapCollection {
@@ -69,7 +69,21 @@ public class MapCollection {
         	Map.Entry<String, String> mm = itr.next();
         	System.out.println(mm.getKey()+" "+mm.getValue());
         	
+        	
         }  
+        System.out.println("====================");
+        Map<String,String> map2 = new LinkedHashMap<>();
+		map2.put("AAA", "AAA");
+		
+        ListIterator<Map.Entry<String, String>> itr1 =  (ListIterator<Entry<String, String>>) map1.entrySet().iterator();
+        while(itr1.hasNext()){
+        	Map.Entry<String, String> mm = itr.next();
+        	if(map2.containsValue(mm.getKey()))
+        		itr1.add(map2.entrySet().iterator().next());
+        	
+               	
+        }
+        System.out.println(map1);
         
         
      /*Tree Map - Tree uses Red-Black tree data structure to store data.
@@ -99,10 +113,13 @@ public class MapCollection {
 		System.out.println("========HashMap Sorting Using Streams");
 		//streamSort.entrySet().stream().sorted(Entry.comparingByKey()).forEach(System.out::println);
 		//streamSort.entrySet().stream().sorted(new SortHashValue()).forEach(System.out::println);
+		
 		Map<String,String> streamSort1 = streamSort.entrySet().stream().sorted(new SortHashValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 		System.out.println(streamSort1);
 		System.out.println("-----Using Lambda----");
 		streamSort.entrySet().stream().sorted((e1,e2)->{return(e1.getKey().compareTo(e2.getKey()));}).forEach(System.out::println);
+		
+		
         
 	}
 

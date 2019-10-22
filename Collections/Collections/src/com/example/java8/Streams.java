@@ -42,6 +42,9 @@ public class Streams {
 		Predict p = new Predict();
 		//String name = strm2.filter(p).findAny().orElse("Name not in");
 		//String name = strm2.filter(s->s.startsWith("B")).findAny().orElse("Name not in");
+		
+		String name1 = strm2.filter(s->{return (s.startsWith("B"));}).findAny().orElse("Name not in");
+		
 		List<String> name = strm2.filter(p).map(e->e.toString()).collect(Collectors.toList());
 		System.out.println("==="+name);
 		

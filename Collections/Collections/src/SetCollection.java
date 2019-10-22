@@ -57,6 +57,7 @@ public class SetCollection {
 		
 		while (itr.hasNext()){
 			System.out.println(itr.next());
+			
 			//muSet.add("FDFDFD");	    
 			//muSet.remove(immu);
 		}

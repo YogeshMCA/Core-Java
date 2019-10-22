@@ -1,7 +1,0 @@
-package com.example.java8;
-
-
-public interface LambdaInterface{
-	void disp(String s);
-	public abstract boolean equals(Object obj);
-}

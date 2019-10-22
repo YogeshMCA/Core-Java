@@ -12,9 +12,11 @@ public class StringExample {
 		s3 = "BB";
 		System.out.println(s3.hashCode());
 		
+		System.out.println(String.join("-","Hello","World"));
+		
 		Set<Immutable> set = new HashSet<>();
 		set.add(new Immutable("KING"));
-		set.add(new Immutable("BLAKE"));
+		set.add(new Immutable("KING"));
 		System.out.println(set.size());
 	}
 
@@ -26,6 +28,7 @@ class Immutable{
 		this.id = id;
 		System.out.println(id.hashCode() & 9);
 	}
+	// Every insertion hashCode() will execute, if any duplicate hashcode comes, equals method will get executed to check the equality
 	@Override
 	public int hashCode() {
 		int i;
@@ -35,6 +38,7 @@ class Immutable{
 	}
 	@Override
 	public boolean equals(Object obj) {
+		System.out.println("Equals");
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -42,6 +46,7 @@ class Immutable{
 		if (getClass() != obj.getClass())
 			return false;
 		Immutable other = (Immutable) obj;
+		System.out.println(other.id);
 		if (id == null) {
 			if (other.id != null)
 				return false;

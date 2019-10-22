@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/HashMap-Internal-Work.GIF</name>
-			<type>1</type>
-			<location>C:/Users/YOGESH/Desktop/HashMap-Internal-Work.GIF</location>
-		</link>
-	</linkedResources>
 </projectDescription>

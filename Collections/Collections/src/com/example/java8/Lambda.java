@@ -8,6 +8,9 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.example.Generics.Employee;
 
 /*Why Lambda 
  * 	Enable to treat functionality as a method argument, or code as data.
@@ -66,6 +69,7 @@ public class Lambda {
 		lst.add("BBB");
 		lst.add("DDD");
 		lst.add("FFF");
+		lst.add("FFF");
 		lst.sort(comparator);
 		lst.forEach(s->System.out.print(s));
 		
@@ -79,7 +83,10 @@ public class Lambda {
 		empl.add(new EmployerChild(3,"Kumar",25));
 		empl.add(new EmployerChild(4,"Kannan",28));
 		
-		FilterList.filterObj(empl,new FilterObjName());
+		//FilterList.filterObj(empl,new FilterObjName());
+		Filter<Employer> fil = (emp)->emp.name.startsWith("Y");
+		FilterList.filterObj(empl,fil);
+		
 		
 		for(Employer e: empl)
 			System.out.println(e);
@@ -89,8 +96,15 @@ public class Lambda {
 		string.add("Yogesh");
 		string.add("Arun");
 		string.add("Kamaraj");
+		string.add("Kamaraj");
 		string.add("Mohan");
 		string.add("amar");
+		string.add("Arun");
+		
+		//Find duplicate from the list
+		System.out.println("============Find Duplicate=======");
+		string.stream().filter(i->Collections.frequency(string, i)>1).collect(Collectors.toSet()).forEach(System.out::print);
+		
 		/*
 		 * Lambda - It is an implementation of method in interface.
 		 */

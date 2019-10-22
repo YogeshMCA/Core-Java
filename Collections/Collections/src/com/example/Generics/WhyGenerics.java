@@ -77,6 +77,9 @@ public class WhyGenerics {
 		//personExt.add(new Partner("er","4"));
 		personExt = partners;
 		
+		List<? super Person> personSuper = new ArrayList<>(); //same as  => List<Person> personSuper = new ArrayList<>();
+		personSuper.add(new Partner("er","4"));
+		personSuper.add(new Person("as","1"));
 		/*
 		 * List<? super T> - We can only "assign list of S", where S is super type of T.
 		 * We can add T type into list, not parent type of T(S)
@@ -246,6 +249,9 @@ class BB extends AA{
 	void disp(){
 		System.out.println("BB Prints");
 	}
+	void display(List<String> lst){
+		System.out.println("List<String>");
+	}
 }
 
 class CC extends BB{
@@ -254,5 +260,9 @@ class CC extends BB{
 	void disp(){
 		System.out.println("CC Prints");
 	}
+	/* Name clash compile time exception, in method overriding with generics  
+	 * void display(List<Integer> lst){ 
+		System.out.println("List<Integer>");
+	}*/
 }
 	

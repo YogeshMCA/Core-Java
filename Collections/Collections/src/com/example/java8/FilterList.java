@@ -7,8 +7,8 @@ public class FilterList {
 	public static <T> void filterObj(List<T> empl,Filter<T> filter) {
 		Iterator<T> itr = empl.iterator();
 		while(itr.hasNext()) {
-			Object obj = itr.next();
-			if(!filter.filter((T)obj)){
+			T obj = itr.next();
+			if(!filter.filter(obj)){
 				itr.remove();
 			}	
 		}
