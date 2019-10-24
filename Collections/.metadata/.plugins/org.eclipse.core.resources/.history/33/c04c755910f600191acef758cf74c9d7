@@ -1,10 +1,6 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class IQ {
 
@@ -21,8 +17,6 @@ public class IQ {
 		System.out.println(in);
 		getList(in);
 		System.out.println(in);
-		
-		predicateFunction();
 
 	}
 	
@@ -42,23 +36,16 @@ public class IQ {
 		List<String> string = new ArrayList<>();
 		string.add("ABADA");
 		string.add("BBAA");
-		string.add("BBAA");
 				
-		System.out.println(string.stream().filter(filter("A")).map(mapper()).collect(Collectors.toList()));
-		System.out.println(string.stream().filter(e -> Collections.frequency(string, e)>1).collect(Collectors.toSet()));
-		
-				
-		List<Integer> integer = Arrays.asList(10,20,5,-3,45,1);
-		System.out.println(integer.stream().sorted().limit(3).collect(Collectors.toList()));
-		
+		string.stream().filter(filter("A")).map(mapper)
 	}
 	
 	public static Predicate<String> filter(String str){
 		return (s) -> s.contains(str);
 	}
 	
-	public static Function<String,Long> mapper(){
-		return (s) -> s.chars().distinct().count();
+	public static Function<String,Integer> filter(String str){
+		return (s) -> s.contains(str);
 	}
 
 }
