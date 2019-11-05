@@ -1,0 +1,12 @@
+package com.example.junit;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+class TestJunit{
+	@Test
+	public void test(){
+		assertEquals("XXX", "XXX");
+	}
+}

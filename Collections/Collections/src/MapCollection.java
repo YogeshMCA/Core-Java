@@ -75,7 +75,7 @@ public class MapCollection {
         Map<String,String> map2 = new LinkedHashMap<>();
 		map2.put("AAA", "AAA");
 		
-        ListIterator<Map.Entry<String, String>> itr1 =  (ListIterator<Entry<String, String>>) map1.entrySet().iterator();
+        /*ListIterator<Map.Entry<String, String>> itr1 =  (ListIterator<Entry<String, String>>) map1.entrySet().iterator();
         while(itr1.hasNext()){
         	Map.Entry<String, String> mm = itr.next();
         	if(map2.containsValue(mm.getKey()))
@@ -83,7 +83,7 @@ public class MapCollection {
         	
                	
         }
-        System.out.println(map1);
+        System.out.println(map1);*/
         
         
      /*Tree Map - Tree uses Red-Black tree data structure to store data.
@@ -118,9 +118,32 @@ public class MapCollection {
 		System.out.println(streamSort1);
 		System.out.println("-----Using Lambda----");
 		streamSort.entrySet().stream().sorted((e1,e2)->{return(e1.getKey().compareTo(e2.getKey()));}).forEach(System.out::println);
+		System.out.println("===forEach===Map==");
+		streamSort.forEach((k,v)->System.out.println(k+" "+v));
+		modifyMap(streamSort);
+		streamSort.forEach((k,v)->System.out.println(k+" "+v));
 		
 		
         
+	}
+	
+	public static void modifyMap(Map<String,String> strMap){
+		/*for(Map.Entry<String, String> str:strMap.entrySet()){
+			if(str.getValue().equals("AAA")){
+				//strMap.remove(str.getKey());
+			}
+		}*/
+		
+		Iterator<Map.Entry<String,String>> itr = strMap.entrySet().iterator();
+		while(itr.hasNext()){
+			Map.Entry<String,String> entrySet = itr.next();
+			if(entrySet.getKey().equals("A")){
+				itr.remove();
+				strMap.put("K","KKKKK");
+			}
+		}
+		
+		
 	}
 
 }

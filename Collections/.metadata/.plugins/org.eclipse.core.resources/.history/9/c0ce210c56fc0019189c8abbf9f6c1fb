@@ -1,0 +1,20 @@
+package com.example.junit;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class JunitTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+
+class TestJunit{
+	@Test
+	public void test(){
+		
+	}
+}

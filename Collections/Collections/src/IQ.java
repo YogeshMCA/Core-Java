@@ -6,6 +6,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import org.junit.Test;
+
 public class IQ {
 
 	public static void main(String[] args) {
@@ -47,7 +49,7 @@ public class IQ {
 		System.out.println(string.stream().filter(filter("A")).map(mapper()).collect(Collectors.toList()));
 		System.out.println(string.stream().filter(e -> Collections.frequency(string, e)>1).collect(Collectors.toSet()));
 		
-				
+			
 		List<Integer> integer = Arrays.asList(10,20,5,-3,45,1);
 		System.out.println(integer.stream().sorted().limit(3).collect(Collectors.toList()));
 		

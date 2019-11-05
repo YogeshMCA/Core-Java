@@ -1,0 +1,17 @@
+package com.example.junit;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+
+class TestJunit{
+	@Test
+	public void test(){
+		
+	}
+}

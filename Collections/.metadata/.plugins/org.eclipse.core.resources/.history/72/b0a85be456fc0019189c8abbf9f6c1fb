@@ -1,0 +1,22 @@
+package com.example.junit;
+
+import org.junit.Test;
+import org.junit.runner.JUnitCore;
+
+import static org.junit.Assert.*;
+
+public class JUnitExample {
+
+	public static void main(String[] args) {
+		
+		JUnitCore.runClasses(TestJunit.class);
+	}
+
+}
+
+class TestJunit{
+	@Test
+	public void test(){
+		assertEquals("XXX", "XXX");
+	}
+}

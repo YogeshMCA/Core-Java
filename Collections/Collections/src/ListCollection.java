@@ -26,5 +26,10 @@ public static void main(String ar[]){
 }
 public static void updateList(List<String> lst){
 	lst.add("KKKKK");
+	for(String ls:lst){
+		if(ls.equals("KKKKK")){
+			lst.add("CCCCC");
+		}
+	}
 }
 }
